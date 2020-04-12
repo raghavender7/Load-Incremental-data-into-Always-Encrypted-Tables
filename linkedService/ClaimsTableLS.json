@@ -1,0 +1,16 @@
+{
+	"name": "ClaimsTableLS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=srgosqleastus2.database.windows.net;initial catalog=srgoae;user id=service.sql",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiOGI3MTk0Yi1lYWRlLTRhZWQtOWE0MC1mNzg3MmI4NTdhNjgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

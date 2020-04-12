@@ -1,0 +1,17 @@
+{
+	"name": "AzureSqlDWTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDW2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "mergedata2"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

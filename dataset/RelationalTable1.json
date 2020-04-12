@@ -1,0 +1,25 @@
+{
+	"name": "RelationalTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ODBC Connection to SQL Server",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RelationalTable",
+		"structure": [
+			{
+				"name": "fileName",
+				"type": "String"
+			},
+			{
+				"name": "binFile",
+				"type": "Byte[]"
+			}
+		],
+		"typeProperties": {
+			"tableName": "\"dbo\".\"tblcombined\""
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,86 @@
+{
+	"name": "Move Data into AE table",
+	"properties": {
+		"activities": [
+			{
+				"name": "MoveDatatoSQLAE",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "FileServerReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "OdbcSink",
+						"writeBatchSize": 0
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ClaimID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Claimid",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ClaimSource",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Claimsource",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Rawtext",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Rawtext",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "OnpremFileSystemDS",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "OdbcTable2",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

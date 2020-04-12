@@ -1,0 +1,36 @@
+{
+	"name": "OnpremFileSystemDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OnpremFileSystemLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "new 1.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ClaimID",
+				"type": "String"
+			},
+			{
+				"name": "ClaimSource",
+				"type": "String"
+			},
+			{
+				"name": "Rawtext",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

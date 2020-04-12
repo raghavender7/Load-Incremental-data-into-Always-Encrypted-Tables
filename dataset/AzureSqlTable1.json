@@ -1,0 +1,27 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "sno",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sname",
+				"type": "xml"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "temp"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

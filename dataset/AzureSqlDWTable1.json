@@ -1,0 +1,77 @@
+{
+	"name": "AzureSqlDWTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDW1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "Date",
+				"type": "datetime2",
+				"scale": 3
+			},
+			{
+				"name": "DateKey",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "MonthKey",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Month",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Quarter",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Year",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Year-Quarter",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Year-Month",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Year-MonthKey",
+				"type": "nvarchar"
+			},
+			{
+				"name": "WeekDayKey",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "WeekDay",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Day Of Month",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Temp"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

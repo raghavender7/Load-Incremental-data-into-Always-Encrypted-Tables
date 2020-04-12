@@ -1,0 +1,7 @@
+{
+	"name": "integrationRuntime1",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Onprem to Azure"
+	}
+}

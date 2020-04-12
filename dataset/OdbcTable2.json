@@ -1,0 +1,16 @@
+{
+	"name": "OdbcTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ODBCClaimsLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OdbcTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "\"dbo\".\"tblClaims\""
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

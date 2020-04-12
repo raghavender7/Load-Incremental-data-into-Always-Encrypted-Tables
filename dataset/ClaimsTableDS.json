@@ -1,0 +1,31 @@
+{
+	"name": "ClaimsTableDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ClaimsTableLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Claimid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Claimsource",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rawtext",
+				"type": "varbinary"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tblClaims"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

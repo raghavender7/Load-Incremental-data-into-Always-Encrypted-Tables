@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlDatabaseDataSource2",
+	"properties": {
+		"description": "Connection to your data source store.",
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": "[dbo].[xuyetable]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

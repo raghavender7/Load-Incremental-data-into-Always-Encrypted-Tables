@@ -1,0 +1,11 @@
+{
+	"name": "AKVLinkedService",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://srgoaekv.vault.azure.net/"
+		}
+	}
+}
