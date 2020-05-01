@@ -155,7 +155,14 @@
 			{
 				"name": "Send emails",
 				"type": "WebActivity",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Run business logic",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -163,7 +170,11 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-38.eastus.logic.azure.com:443/workflows/84e27b95e3204868ac8b69e4760e388d/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=MOf61uCuQvaJpJIXthbcMMjR6Gtff817bPPHTlWib3A",
+					"method": "POST"
+				}
 			}
 		],
 		"annotations": []
