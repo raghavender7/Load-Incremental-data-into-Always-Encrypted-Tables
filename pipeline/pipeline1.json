@@ -3,26 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get Filenames from Blob",
-				"type": "GetMetadata",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "AzureBlobStorageDataDestination1",
-						"type": "DatasetReference"
-					},
-					"fieldList": []
-				}
-			},
-			{
 				"name": "Check whether its 401K or not",
 				"type": "IfCondition",
 				"dependsOn": [
@@ -76,14 +56,7 @@
 			{
 				"name": "Load Config",
 				"type": "SqlServerStoredProcedure",
-				"dependsOn": [
-					{
-						"activity": "Get Filenames from Blob",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -144,15 +117,6 @@
 				}
 			},
 			{
-				"name": "Switch1",
-				"type": "Switch",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"cases": []
-				}
-			},
-			{
 				"name": "Send emails",
 				"type": "WebActivity",
 				"dependsOn": [
@@ -174,6 +138,65 @@
 				"typeProperties": {
 					"url": "https://prod-38.eastus.logic.azure.com:443/workflows/84e27b95e3204868ac8b69e4760e388d/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=MOf61uCuQvaJpJIXthbcMMjR6Gtff817bPPHTlWib3A",
 					"method": "POST"
+				}
+			},
+			{
+				"name": "Filename",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": []
+			},
+			{
+				"name": "Filetype",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": []
+			},
+			{
+				"name": "Pipeline",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": []
+			},
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Switch1",
+				"type": "Switch",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"cases": [
+						{
+							"value": "Case1",
+							"activities": [
+								{
+									"name": "Web1",
+									"type": "WebActivity",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"linkedServices": [],
+										"datasets": []
+									}
+								}
+							]
+						}
+					]
 				}
 			}
 		],
