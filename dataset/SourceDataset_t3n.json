@@ -1,0 +1,34 @@
+{
+	"name": "SourceDataset_t3n",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlMI1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "description",
+				"type": "varchar"
+			},
+			{
+				"name": "details",
+				"type": "varchar"
+			},
+			{
+				"name": "done",
+				"type": "bit"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "todo"
+		}
+	}
+}
