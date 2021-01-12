@@ -1,0 +1,27 @@
+{
+	"name": "SSIS-IR",
+	"properties": {
+		"type": "Managed",
+		"typeProperties": {
+			"computeProperties": {
+				"location": "East US 2",
+				"nodeSize": "Standard_D2_v3",
+				"numberOfNodes": 1,
+				"maxParallelExecutionsPerNode": 2
+			},
+			"ssisProperties": {
+				"edition": "Standard",
+				"licenseType": "BasePrice",
+				"packageStores": [
+					{
+						"name": "Taravikkum",
+						"packageStoreLinkedService": {
+							"referenceName": "AzureSqlMI1",
+							"type": "LinkedServiceReference"
+						}
+					}
+				]
+			}
+		}
+	}
+}
