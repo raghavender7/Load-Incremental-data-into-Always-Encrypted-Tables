@@ -6,10 +6,10 @@
 		"type": "AzureSqlMI",
 		"typeProperties": {
 			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=srgosqlmi.dda8e1223c61.database.windows.net;initial catalog=demo1;user id=service.sql",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4ZDllM2ZkYy04MjlmLTRiNjgtODM2ZS0wMTA2NTA3MzkyMmUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiMzI1NmY5My1jNTM2LTRlY2MtYTQzNC0wNGI0NzY1ZGMxMGQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
-			"referenceName": "SHIR",
+			"referenceName": "integrationRuntime2",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
