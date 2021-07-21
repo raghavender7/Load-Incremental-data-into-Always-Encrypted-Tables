@@ -1,0 +1,15 @@
+{
+	"name": "SourceDataset_4fm",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dataverse1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CommonDataServiceForAppsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "account"
+		}
+	}
+}
