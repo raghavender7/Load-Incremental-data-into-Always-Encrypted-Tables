@@ -1,0 +1,2130 @@
+{
+	"name": "Dataverse_azureIR",
+	"properties": {
+		"description": "Source and Sink are connecting over Azure IR",
+		"activities": [
+			{
+				"name": "Copy_utr",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "account"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.account_azureir"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "CommonDataServiceForAppsSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "accountcategorycode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "accountcategorycode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "accountclassificationcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "accountclassificationcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "accountid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "accountid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "accountnumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "accountnumber",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "accountratingcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "accountratingcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_addressid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "address1_addressid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_addresstypecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address1_addresstypecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_city",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_city",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_composite",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_composite",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_country",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_county",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_county",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_fax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_fax",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_freighttermscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address1_freighttermscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_latitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address1_latitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_line1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_line1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_line2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_line2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_line3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_line3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_longitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address1_longitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_postalcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_postalcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_postofficebox",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_postofficebox",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_primarycontactname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_primarycontactname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_shippingmethodcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address1_shippingmethodcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_stateorprovince",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_stateorprovince",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_telephone1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_telephone1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_telephone2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_telephone2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_telephone3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_telephone3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_upszone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_upszone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_utcoffset",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address1_utcoffset",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_addressid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "address2_addressid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_addresstypecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address2_addresstypecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_city",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_city",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_composite",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_composite",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_country",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_county",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_county",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_fax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_fax",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_freighttermscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address2_freighttermscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_latitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address2_latitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_line1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_line1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_line2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_line2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_line3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_line3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_longitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address2_longitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_postalcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_postalcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_postofficebox",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_postofficebox",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_primarycontactname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_primarycontactname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_shippingmethodcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address2_shippingmethodcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_stateorprovince",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_stateorprovince",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_telephone1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_telephone1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_telephone2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_telephone2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_telephone3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_telephone3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_upszone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_upszone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_utcoffset",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address2_utcoffset",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "aging30",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "aging30",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "aging30_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "aging30_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "aging60",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "aging60",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "aging60_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "aging60_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "aging90",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "aging90",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "aging90_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "aging90_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "businesstypecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "businesstypecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "createdby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyexternalparty",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdbyexternalparty",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyexternalpartyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyexternalpartyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyexternalpartyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyexternalpartyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "createdon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "creditlimit",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "creditlimit",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "creditlimit_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "creditlimit_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "creditonhold",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "creditonhold",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "customersizecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "customersizecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "customertypecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "customertypecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "defaultpricelevelid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "defaultpricelevelid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "defaultpricelevelidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "defaultpricelevelidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "description",
+									"type": "String"
+								},
+								"sink": {
+									"name": "description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "donotbulkemail",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "donotbulkemail",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "donotbulkpostalmail",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "donotbulkpostalmail",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "donotemail",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "donotemail",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "donotfax",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "donotfax",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "donotphone",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "donotphone",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "donotpostalmail",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "donotpostalmail",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "donotsendmm",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "donotsendmm",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "emailaddress1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "emailaddress1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emailaddress2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "emailaddress2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emailaddress3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "emailaddress3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "entityimage_timestamp",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "entityimage_timestamp",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "entityimage_url",
+									"type": "String"
+								},
+								"sink": {
+									"name": "entityimage_url",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "entityimageid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "entityimageid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "fax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "fax",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "followemail",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "followemail",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "ftpsiteurl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ftpsiteurl",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "industrycode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "industrycode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "isprivate",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "isprivate",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "lastonholdtime",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "lastonholdtime",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "lastusedincampaign",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "lastusedincampaign",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "marketcap",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "marketcap",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "marketcap_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "marketcap_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "marketingonly",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "marketingonly",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "masteraccountidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "masteraccountidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "masteraccountidyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "masteraccountidyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "masterid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "masterid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "merged",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "merged",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyexternalparty",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedbyexternalparty",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyexternalpartyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyexternalpartyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyexternalpartyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyexternalpartyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_billingaccount",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "msdyn_billingaccount",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_billingaccountname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "msdyn_billingaccountname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_billingaccountyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "msdyn_billingaccountyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_preferredresource",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "msdyn_preferredresource",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_preferredresourcename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "msdyn_preferredresourcename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_salestaxcode",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "msdyn_salestaxcode",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_salestaxcodename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "msdyn_salestaxcodename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_serviceterritory",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "msdyn_serviceterritory",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_serviceterritoryname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "msdyn_serviceterritoryname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_taxexempt",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "msdyn_taxexempt",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_taxexemptnumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "msdyn_taxexemptnumber",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_travelcharge",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "msdyn_travelcharge",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_travelcharge_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "msdyn_travelcharge_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_travelchargetype",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "msdyn_travelchargetype",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_workhourtemplate",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "msdyn_workhourtemplate",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_workhourtemplatename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "msdyn_workhourtemplatename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_workorderinstructions",
+									"type": "String"
+								},
+								"sink": {
+									"name": "msdyn_workorderinstructions",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "numberofemployees",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "numberofemployees",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "onholdtime",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "onholdtime",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "opendeals",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "opendeals",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "opendeals_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "opendeals_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "opendeals_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "opendeals_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "openrevenue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "openrevenue",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "openrevenue_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "openrevenue_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "openrevenue_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "openrevenue_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "openrevenue_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "openrevenue_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "originatingleadid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "originatingleadid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "originatingleadidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "originatingleadidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "originatingleadidyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "originatingleadidyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ownerid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "ownerid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridtype",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridtype",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ownershipcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ownershipcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "owningbusinessunit",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owningbusinessunit",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owningteam",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owningteam",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owninguser",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owninguser",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "parentaccountid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "parentaccountid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "parentaccountidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "parentaccountidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "parentaccountidyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "parentaccountidyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "participatesinworkflow",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "participatesinworkflow",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "paymenttermscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "paymenttermscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredappointmentdaycode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "preferredappointmentdaycode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredappointmenttimecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "preferredappointmenttimecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredcontactmethodcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "preferredcontactmethodcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredequipmentid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "preferredequipmentid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredequipmentidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "preferredequipmentidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredserviceid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "preferredserviceid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredserviceidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "preferredserviceidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredsystemuserid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "preferredsystemuserid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredsystemuseridname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "preferredsystemuseridname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredsystemuseridyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "preferredsystemuseridyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "primarycontactid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "primarycontactid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "primarycontactidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "primarycontactidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "primarycontactidyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "primarycontactidyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "primarysatoriid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "primarysatoriid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "primarytwitterid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "primarytwitterid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "processid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "processid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "revenue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "revenue",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "revenue_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "revenue_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "sharesoutstanding",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "sharesoutstanding",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "shippingmethodcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "shippingmethodcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "sic",
+									"type": "String"
+								},
+								"sink": {
+									"name": "sic",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "slaid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "slaid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "slainvokedid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "slainvokedid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "slainvokedidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "slainvokedidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "slaname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "slaname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "stageid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "stageid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "statecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "statecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "statuscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "statuscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "stockexchange",
+									"type": "String"
+								},
+								"sink": {
+									"name": "stockexchange",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "teamsfollowed",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "teamsfollowed",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "telephone1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "telephone1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "telephone2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "telephone2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "telephone3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "telephone3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "territorycode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "territorycode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "territoryid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "territoryid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "territoryidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "territoryidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "tickersymbol",
+									"type": "String"
+								},
+								"sink": {
+									"name": "tickersymbol",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "timespentbymeonemailandmeetings",
+									"type": "String"
+								},
+								"sink": {
+									"name": "timespentbymeonemailandmeetings",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "traversedpath",
+									"type": "String"
+								},
+								"sink": {
+									"name": "traversedpath",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "versionnumber",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "versionnumber",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "websiteurl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "websiteurl",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yominame",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_utr",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_utr",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
