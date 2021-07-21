@@ -1,0 +1,7 @@
+{
+	"name": "azuresqlpe",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/6f931dc1-9715-4a59-a849-0c049740fa0f/resourceGroups/DATA-ANALYTICS/providers/Microsoft.Sql/servers/srgosqleastus2",
+		"groupId": "sqlServer"
+	}
+}
