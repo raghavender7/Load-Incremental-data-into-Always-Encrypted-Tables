@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_4fm",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azuresqldb_managedVNETazureir",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "account_azuremanagedvnetir"
+		}
+	}
+}
