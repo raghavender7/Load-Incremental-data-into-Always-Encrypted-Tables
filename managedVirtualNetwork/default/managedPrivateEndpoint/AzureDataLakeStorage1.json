@@ -1,0 +1,7 @@
+{
+	"name": "AzureDataLakeStorage1",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/6f931dc1-9715-4a59-a849-0c049740fa0f/resourceGroups/RICE/providers/Microsoft.Storage/storageAccounts/srgopremblob",
+		"groupId": "dfs"
+	}
+}
