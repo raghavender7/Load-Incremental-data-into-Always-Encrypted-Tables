@@ -1,0 +1,95 @@
+{
+	"name": "CopyPipeline_uvz",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_uvz",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.BuildVersion"
+					},
+					{
+						"name": "Destination",
+						"value": "sqlcos"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "CosmosDbSqlApiSink",
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "SystemInformationID",
+									"type": "Byte"
+								},
+								"sink": {
+									"path": "$['Column_1']"
+								}
+							},
+							{
+								"source": {
+									"name": "Database Version",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Column_2']"
+								}
+							},
+							{
+								"source": {
+									"name": "VersionDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"path": "$['Column_3']"
+								}
+							},
+							{
+								"source": {
+									"name": "ModifiedDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"path": "$['Column_4']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_uvz",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_uvz",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

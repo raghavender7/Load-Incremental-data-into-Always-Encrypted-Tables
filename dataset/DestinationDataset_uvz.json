@@ -1,0 +1,15 @@
+{
+	"name": "DestinationDataset_uvz",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDb1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {},
+		"typeProperties": {
+			"collectionName": "sqlcos"
+		}
+	}
+}
