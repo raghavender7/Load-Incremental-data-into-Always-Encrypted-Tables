@@ -1,0 +1,10 @@
+{
+	"name": "srgoaeakv",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://srgoaekv.vault.azure.net/"
+		}
+	}
+}
