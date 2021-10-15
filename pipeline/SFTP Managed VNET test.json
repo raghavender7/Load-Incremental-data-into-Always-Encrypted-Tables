@@ -1,0 +1,6 @@
+{
+	"name": "SFTP Managed VNET test",
+	"properties": {
+		"annotations": []
+	}
+}
