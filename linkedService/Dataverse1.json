@@ -1,14 +1,13 @@
 {
 	"name": "Dataverse1",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
-		"annotations": [],
 		"type": "CommonDataServiceForApps",
+		"annotations": [],
 		"typeProperties": {
 			"deploymentType": "Online",
 			"serviceUri": {
 				"type": "AzureKeyVaultSecret",
-				"secretName": "test",
+				"secretName": "serviceuri",
 				"store": {
 					"referenceName": "postgreskv",
 					"type": "LinkedServiceReference"
